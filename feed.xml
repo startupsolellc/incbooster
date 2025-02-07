@@ -3,29 +3,33 @@
     <title>IncBooster.com</title>
     <link href="https://incbooster.com/feed.xml" rel="self" />
     <link href="https://incbooster.com" />
-    <updated>2025-02-07T18:40:47+03:00</updated>
+    <updated>2025-02-07T19:23:10+03:00</updated>
     <author>
         <name>Nazmi Ozer</name>
     </author>
     <id>https://incbooster.com</id>
 
     <entry>
-        <title>Test</title>
+        <title>Test article heading</title>
         <author>
             <name>Nazmi Ozer</name>
         </author>
         <link href="https://incbooster.com/test/"/>
         <id>https://incbooster.com/test/</id>
+        <media:content url="https://incbooster.com/media/posts/1/best-states-for-non-resident-llc.jpg" medium="image" />
 
         <updated>2025-02-07T18:40:47+03:00</updated>
             <summary>
                 <![CDATA[
-                    test
+                        <img src="https://incbooster.com/media/posts/1/best-states-for-non-resident-llc.jpg" alt="alt" />
+                    Discover the vibrant culture, delectable cuisine, and hidden gems of Japan. From bustling cities to serene temples, immerse yourself in the unique experiences that Japan has to offer. This guide covers everything from must-see attractions to local delicacies. Whether you're a foodie, history buff
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>test</p>
+                    <p><img src="https://incbooster.com/media/posts/1/best-states-for-non-resident-llc.jpg" class="type:primaryImage" alt="alt" /></p>
+                <p>Discover the vibrant culture, delectable cuisine, and hidden gems of Japan. From bustling cities to serene temples, immerse yourself in the unique experiences that Japan has to offer.</p>
+<p>This guide covers everything from must-see attractions to local delicacies. Whether you're a foodie, history buff</p>
             ]]>
         </content>
     </entry>
