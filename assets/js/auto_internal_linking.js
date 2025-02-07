@@ -109,8 +109,8 @@ window.onload = function() {
         for (let key in keywords) {
             let regex = new RegExp("\\b" + key.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + "\\b", "i"); // Sadece ilk eşleşmeyi alacak
 
-            if (!html.includes(`<a href="${keywords[key]}">`)) {
-                html = html.replace(regex, `<a href="${keywords[key]}">$&</a>`); // Sadece ilk eşleşmeyi değiştir
+            if (!html.includes(`<a href="${keywords[key]}" class="u-inner">`)) {
+                html = html.replace(regex, `<a href="${keywords[key]}" class="u-inner">$&</a>`); // Sadece ilk eşleşmeyi değiştir
                 console.log(`Linked "${key}" to ${keywords[key]}`); // Debug log
             }
         }
@@ -118,4 +118,4 @@ window.onload = function() {
     });
 
     console.log("Internal linking script execution completed."); // Kod tamamlandı mesajı
-};
+
