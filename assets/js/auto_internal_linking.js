@@ -80,7 +80,7 @@ let keywords = {
     "pazar": "/tags/genel/"
 	
     // 🌍 Küresel İş Fırsatları
-    "yurt dışı iş fırsatları": "/tags/is-firsatlari/",
+    "yurt dışı iş fırsatları": "/tags/is-firsatlari/"
     "freelance kazanç": "/tags/is-firsatlari/",
     "uluslararası yatırım": "/tags/is-firsatlari/",
     "remote work": "/tags/is-firsatlari/",
