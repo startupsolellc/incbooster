@@ -9,5 +9,19 @@
         "name": "Nazmi Ozer"
     },
     "items": [
+        {
+            "id": "https://incbooster.com/test/",
+            "url": "https://incbooster.com/test/",
+            "title": "Test",
+            "summary": "test",
+            "content_html": "<p>test</p>",
+            "author": {
+                "name": "Nazmi Ozer"
+            },
+            "tags": [
+            ],
+            "date_published": "2025-02-07T18:40:47+03:00",
+            "date_modified": "2025-02-07T18:40:47+03:00"
+        }
     ]
 }
