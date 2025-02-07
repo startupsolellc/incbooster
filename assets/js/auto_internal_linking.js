@@ -118,4 +118,4 @@ window.onload = function() {
     });
 
     console.log("Internal linking script execution completed."); // Kod tamamlandı mesajı
-
+};
