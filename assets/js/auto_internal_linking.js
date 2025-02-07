@@ -96,7 +96,7 @@ let keywords = {
 };
 
 
-    let contentBlocks = document.querySelectorAll(".content__entry, .post-content, .page-content");
+    let contentBlocks = document.querySelectorAll(".entry-wrapper.content__entry");
 
     if (!contentBlocks.length) {
         console.log("No content blocks found! Exiting script.");
@@ -119,3 +119,4 @@ let keywords = {
     });
 
     console.log("Internal linking script execution completed."); // Kod tamamlandı mesajı
+};
