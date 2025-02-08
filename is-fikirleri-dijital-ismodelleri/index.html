@@ -4,7 +4,7 @@
     let contentArea = document.querySelector(".entry-wrapper.content__entry");
     if (!contentArea) return;
 
-    let headers = contentArea.querySelectorAll("h1, h2");
+    let headers = contentArea.querySelectorAll("h2"); // Sadece <h2> başlıklarını al
     if (headers.length === 0) return;
 
     let tocList = document.querySelector("#toc-list");
@@ -35,6 +35,9 @@
     };
 
     headers.forEach((header, index) => {
+        // "İçindekiler" başlığını hariç tut (Eğer başlığın metni "İçindekiler" ise TOC’ye eklemiyoruz)
+        if (header.textContent.trim().toLowerCase() === "içindekiler") return;
+
         let id = `toc-${index}`;
         header.id = id;
 
