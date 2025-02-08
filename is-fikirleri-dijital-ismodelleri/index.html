@@ -21,54 +21,27 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Anasayfa",
-          "item": {
-            "@type": "WebPage",
-            "@id": "https://incbooster.com/",
-            "url": "https://incbooster.com/"
-          }
+          "item": "https://incbooster.com/"
         }
         {{#if tags}}
           {{#each tags}}
-            {{#if @first}}
-        ,
+            {{#if @first}},
             {
               "@type": "ListItem",
               "position": 2,
               "name": "{{this.name}}",
-              "item": {
-                "@type": "WebPage",
-                "@id": "{{this.url}}",
-                "url": "{{this.url}}"
-              }
+              "item": "{{this.url}}"
             }
             {{/if}}
           {{/each}}
         {{/if}}
-        {{#unless tags}}
         ,
         {
           "@type": "ListItem",
-          "position": 2,
+          "position": {{#if tags}}3{{else}}2{{/if}},
           "name": "{{title}}",
-          "item": {
-            "@type": "WebPage",
-            "@id": "{{@site.url}}{{url}}",
-            "url": "{{@site.url}}{{url}}"
-          }
+          "item": "{{@site.url}}{{url}}"
         }
-        {{else}}
-        ,
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "{{title}}",
-          "item": {
-            "@type": "WebPage",
-            "@id": "{{@site.url}}{{url}}",
-            "url": "{{@site.url}}{{url}}"
-          }
-        }
-        {{/unless}}
       ]
     }
   ]
