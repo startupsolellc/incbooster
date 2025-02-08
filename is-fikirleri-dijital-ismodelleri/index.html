@@ -27,11 +27,13 @@
                 "https://startupsole.com/author/nazmiozer/"
             ]
         },
-        "hasPart": {
-            "@type": "TableOfContents",
-            "name": "İçindekiler",
-            "itemListElement": []
-        }
+        "hasPart": [
+            {
+                "@type": "ItemList",
+                "name": "İçindekiler",
+                "itemListElement": []
+            }
+        ]
     };
 
     headers.forEach((header, index) => {
@@ -49,7 +51,7 @@
         listItem.appendChild(link);
         tocList.appendChild(listItem);
 
-        jsonLD.hasPart.itemListElement.push({
+        jsonLD.hasPart[0].itemListElement.push({
             "@type": "ListItem",
             "position": index + 1,
             "name": header.textContent,
