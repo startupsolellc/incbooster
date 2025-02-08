@@ -25,14 +25,18 @@
         }
         {{#if tags}}
           {{#each tags}}
-            {{#if @first}},{
+            {{#if @first}}
+        ,
+            {
               "@type": "ListItem",
               "position": 2,
               "name": "{{this.name}}",
               "item": "{{this.url}}"
-            }{{/if}}
+            }
+            {{/if}}
           {{/each}}
-        {{/if}},
+        {{/if}}
+        ,
         {
           "@type": "ListItem",
           "position": 3,
