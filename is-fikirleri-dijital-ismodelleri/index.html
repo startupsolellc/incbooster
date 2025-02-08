@@ -4,7 +4,7 @@
     let contentArea = document.querySelector(".entry-wrapper.content__entry");
     if (!contentArea) return;
 
-    let headers = contentArea.querySelectorAll("h2"); // Sadece <h2> başlıklarını al
+    let headers = contentArea.querySelectorAll("h1"); // SADECE <h1> başlıklarını al
     if (headers.length === 0) return;
 
     let tocList = document.querySelector("#toc-list");
@@ -27,16 +27,15 @@
                 "https://startupsole.com/author/nazmiozer/"
             ]
         },
-        "tableOfContents": {
-            "@type": "ItemList",
+        "hasPart": {
+            "@type": "TableOfContents",
             "name": "İçindekiler",
             "itemListElement": []
         }
     };
 
     headers.forEach((header, index) => {
-        // "İçindekiler" başlığını hariç tut (Eğer başlığın metni "İçindekiler" ise TOC’ye eklemiyoruz)
-        if (header.textContent.trim().toLowerCase() === "içindekiler") return;
+        if (header.textContent.trim().toLowerCase() === "içindekiler") return; // "İçindekiler" başlığını hariç tut
 
         let id = `toc-${index}`;
         header.id = id;
@@ -50,7 +49,7 @@
         listItem.appendChild(link);
         tocList.appendChild(listItem);
 
-        jsonLD.tableOfContents.itemListElement.push({
+        jsonLD.hasPart.itemListElement.push({
             "@type": "ListItem",
             "position": index + 1,
             "name": header.textContent,
@@ -63,5 +62,5 @@
     script.textContent = JSON.stringify(jsonLD);
     document.head.appendChild(script);
 
-    tocContainer.style.display = "block";
+    tocContainer.style.display = "block"; 
 });</script></div></div></main><footer class="footer footer--glued"><div class="wrapper"><nav class="footer__nav"><ul><li><a href="https://incbooster.com/gizlilik-politikasi/" class="al" title="Gizlilik" target="_self" rel="Gizlilik">Gizlilik</a></li><li><a href="https://incbooster.com/sartlar-and-kosullar/" class="al" title="Şartlar" target="_self" rel="Şartlar">Şartlar</a></li><li><a href="https://incbooster.com/hakkinda/" class="al" title="Hakkında" target="_self" rel="Hakkında">Hakkında</a></li><li><a href="https://incbooster.com/iletisim/" class="al" title="İletişim" target="_self" rel="İletişim">İletişim</a></li></ul></nav><div class="footer__copyright"><p>Powered by incbooster</p></div><button onclick="backToTopFunction()" id="backToTop" class="footer__bttop" aria-label="Back to top" title="Back to top"><svg width="20" height="20"><use xlink:href="https://incbooster.com/assets/svg/svg-map.svg#toparrow"/></svg></button></div></footer><script defer="defer" src="https://incbooster.com/assets/js/scripts.min.js?v=700105c316933a8202041b6415abb233"></script><script>window.publiiThemeMenuConfig={mobileMenuMode:'sidebar',animationSpeed:300,submenuWidth: 'auto',doubleClickTime:500,mobileMenuExpandableSubmenus:true,relatedContainerForOverlayMenuSelector:'.top'};</script><script src="/assets/js/auto_internal_linking.js"></script></body></html>
