@@ -22,25 +22,18 @@
           "position": 1,
           "name": "Anasayfa",
           "item": "https://incbooster.com/"
-        }
-        {{#if tags}}
-          {{#each tags}}
-            {{#if @first}},
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "{{this.name}}",
-              "item": "{{this.url}}"
-            }
-            {{/if}}
-          {{/each}}
-        {{/if}}
-        ,
+        },
         {
           "@type": "ListItem",
-          "position": {{#if tags}}3{{else}}2{{/if}},
-          "name": "{{title}}",
-          "item": "{{@site.url}}{{url}}"
+          "position": 2,
+          "name": "Kategori Adı",
+          "item": "https://incbooster.com/kategori-url/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Makale Başlığı",
+          "item": "https://incbooster.com/makale-url/"
         }
       ]
     }
