@@ -6,6 +6,38 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "NewsArticle",
+      "mainEntityOfPage": "{{url}}",
+      "headline": "{{title}}",
+      "datePublished": "{{date createdAt 'YYYY-MM-DDTHH:mm:ssZ'}}",
+      "dateModified": "{{date modifiedAt 'YYYY-MM-DDTHH:mm:ssZ'}}",
+      "description": "{{{excerpt}}}",
+      "author": {
+        "@type": "Person",
+        "name": "{{author.name}}",
+        "url": "{{author.url}}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IncBooster",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://incbooster.com/media/website/favicon.png",
+          "width": "16",
+          "height": "16"
+        }
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{featuredImage.url}}",
+        "width": "{{featuredImage.width}}",
+        "height": "{{featuredImage.height}}"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification"
+      }
+    },
+    {
       "@type": "Person",
       "name": "Nazmi Ozer",
       "url": "https://incbooster.com/authors/nazmi-ozer/",
