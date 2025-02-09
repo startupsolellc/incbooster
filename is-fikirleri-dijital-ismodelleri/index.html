@@ -38,7 +38,56 @@
       ]
     }
   ]
-}</script></div></div></main><footer class="footer footer--glued"><div class="wrapper"><nav class="footer__nav"><ul><li><a href="https://incbooster.com/gizlilik-politikasi/" class="al" title="Gizlilik" target="_self" rel="Gizlilik">Gizlilik</a></li><li><a href="https://incbooster.com/sartlar-and-kosullar/" class="al" title="Şartlar" target="_self" rel="Şartlar">Şartlar</a></li><li><a href="https://incbooster.com/hakkinda/" class="al" title="Hakkında" target="_self" rel="Hakkında">Hakkında</a></li><li><a href="https://incbooster.com/iletisim/" class="al" title="İletişim" target="_self" rel="İletişim">İletişim</a></li><li><a href="https://incbooster.com/amerika-da-llc-sirket-kurma/" class="al" title="Hizmetlerimiz" target="_self" rel="Hizmetlerimiz">Hizmetlerimiz</a></li></ul></nav><div class="footer__copyright"><p>© 2025 IncBooster.com - Tüm Hakları Saklıdır.</p></div><button onclick="backToTopFunction()" id="backToTop" class="footer__bttop" aria-label="Back to top" title="Back to top"><svg width="20" height="20"><use xlink:href="https://incbooster.com/assets/svg/svg-map.svg#toparrow"/></svg></button></div></footer><script defer="defer" src="https://incbooster.com/assets/js/scripts.min.js?v=700105c316933a8202041b6415abb233"></script><script>window.publiiThemeMenuConfig={mobileMenuMode:'sidebar',animationSpeed:300,submenuWidth: 'auto',doubleClickTime:500,mobileMenuExpandableSubmenus:true,relatedContainerForOverlayMenuSelector:'.top'};</script><script src="/assets/js/auto_internal_linking.js"></script><script type="application/ld+json">{
+}</script><script>document.addEventListener("DOMContentLoaded", function() {
+    let contentArea = document.querySelector("body > main > article > div.entry-wrapper.content__entry"); // Makale içeriği
+    if (!contentArea) return; // İçerik yoksa işlemi durdur
+
+    let lists = contentArea.querySelectorAll("ul, ol"); // Makaledeki listeleri al
+    let itemListSchema = {
+        "@type": "ItemList",
+        "itemListElement": []
+    };
+
+    if (lists.length > 0) {
+        lists.forEach((list, index) => {
+            let items = list.querySelectorAll("li");
+            items.forEach((item, i) => {
+                let listItem = {
+                    "@type": "ListItem",
+                    "position": i + 1,
+                    "name": item.innerText.trim()
+                };
+                itemListSchema.itemListElement.push(listItem);
+            });
+        });
+    }
+
+    let existingSchema = document.querySelector('script[type="application/ld+json"]');
+    if (existingSchema) {
+        let schemaJSON;
+        try {
+            schemaJSON = JSON.parse(existingSchema.textContent);
+        } catch (e) {
+            console.warn("Geçersiz JSON-LD tespit edildi.");
+            return;
+        }
+
+        if (schemaJSON["@graph"] && lists.length > 0) {
+            schemaJSON["@graph"].push(itemListSchema); // Yeni şemayı mevcut JSON-LD içine ekle
+        }
+
+        existingSchema.textContent = JSON.stringify(schemaJSON, null, 2); // Güncellenmiş JSON-LD'yi tekrar head içine yaz
+    } else if (lists.length > 0) {
+        let newSchema = {
+            "@context": "https://schema.org",
+            "@graph": [itemListSchema]
+        };
+        let script = document.createElement("script");
+        script.type = "application/ld+json";
+        script.textContent = JSON.stringify(newSchema, null, 2);
+        document.head.appendChild(script);
+    }
+});</script></div></div></main><footer class="footer footer--glued"><div class="wrapper"><nav class="footer__nav"><ul><li><a href="https://incbooster.com/gizlilik-politikasi/" class="al" title="Gizlilik" target="_self" rel="Gizlilik">Gizlilik</a></li><li><a href="https://incbooster.com/sartlar-and-kosullar/" class="al" title="Şartlar" target="_self" rel="Şartlar">Şartlar</a></li><li><a href="https://incbooster.com/hakkinda/" class="al" title="Hakkında" target="_self" rel="Hakkında">Hakkında</a></li><li><a href="https://incbooster.com/iletisim/" class="al" title="İletişim" target="_self" rel="İletişim">İletişim</a></li><li><a href="https://incbooster.com/amerika-da-llc-sirket-kurma/" class="al" title="Hizmetlerimiz" target="_self" rel="Hizmetlerimiz">Hizmetlerimiz</a></li></ul></nav><div class="footer__copyright"><p>© 2025 IncBooster.com - Tüm Hakları Saklıdır.</p></div><button onclick="backToTopFunction()" id="backToTop" class="footer__bttop" aria-label="Back to top" title="Back to top"><svg width="20" height="20"><use xlink:href="https://incbooster.com/assets/svg/svg-map.svg#toparrow"/></svg></button></div></footer><script defer="defer" src="https://incbooster.com/assets/js/scripts.min.js?v=700105c316933a8202041b6415abb233"></script><script>window.publiiThemeMenuConfig={mobileMenuMode:'sidebar',animationSpeed:300,submenuWidth: 'auto',doubleClickTime:500,mobileMenuExpandableSubmenus:true,relatedContainerForOverlayMenuSelector:'.top'};</script><script src="/assets/js/auto_internal_linking.js"></script><script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Ecom Yazılım ve Danışmanlık Ltd. Şti.",
